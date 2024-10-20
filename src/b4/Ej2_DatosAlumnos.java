@@ -27,11 +27,11 @@ public class Ej2_DatosAlumnos {
 
         } while (edad >= 0);
 
-        // Comprobación para evitar división por cero
+        // Comprobación 
         if (contadorAlumnos > 0) {
             double mediaEdades = (double) sumaEdades / contadorAlumnos;
 
-            // Mostrar resultados
+            // resultados
             System.out.println("Número de alumnos introducidos: " + contadorAlumnos);
             System.out.println("Suma de las edades: " + sumaEdades);
             System.out.println("Media de las edades: " + mediaEdades);
