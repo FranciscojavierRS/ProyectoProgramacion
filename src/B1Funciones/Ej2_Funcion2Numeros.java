@@ -1,4 +1,4 @@
-package BFunciones1;
+package B1Funciones;
 
 import java.util.Scanner;
 
