@@ -16,7 +16,7 @@ public class Ej1_PositivoNegativoV2 {
         int max = Integer.MIN_VALUE;
         int menoresDeCinco = 0;
         boolean mayorDeCien = false;
-
+        metodoPropio();
         // Bucle while para solicitar números al usuario hasta que se introduzca un negativo
         while (true) {
             System.out.print("Introduce un número entero positivo (o un número negativo para terminar): ");
@@ -81,5 +81,12 @@ public class Ej1_PositivoNegativoV2 {
         // Cerrar el scanner
         scanner.close();
     }
+
+	private static void metodoPropio() {
+		String texto = "Esto es un metodo propio";
+		
+		System.out.println(texto);
+		
+	}
 }
 
