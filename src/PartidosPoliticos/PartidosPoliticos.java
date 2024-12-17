@@ -12,6 +12,7 @@ public class PartidosPoliticos {
     private static int numlocalidades = 0;
     private static String[] partidos = new String[MAXPARTIDOS];
     private static String[] localidades = new String[MAXLOCALIDADES];
+    
 
 
 	public static void main(String[] args) {
