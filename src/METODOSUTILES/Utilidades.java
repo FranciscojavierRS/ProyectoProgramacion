@@ -27,7 +27,18 @@ public class Utilidades {
 	//10 Recorre la tabla mostrando los datos insertados en la tabla y ademas Alfabeticamente (partidos)
 	
 	
-	  // Ordena un array de cadenas ALFABETICAMENTE (Partidos Politicos)
+	  private static final int MAXCANCIONES = 0;
+	private static final int MAXMESES = 0;
+	private static final int MAXLOCALIDADES = 0;
+	private static int numlocalidades;
+	private static Object[] localidades;
+	private static int[][] likes;
+	private static int numcanciones;
+	private static Object[] canciones;
+	private static String[] partidos;
+	private static int numpartidos;
+	private static int[][] votos;
+	// Ordena un array de cadenas ALFABETICAMENTE (Partidos Politicos)
 	public static String[] getOrdenarArray(String[] array, int numElementos) {
 		String[] arrayOrdenado = Arrays.copyOf(array, numElementos);
 		Arrays.sort(arrayOrdenado);
@@ -121,7 +132,12 @@ public class Utilidades {
 		System.out.println("Datos almacenados");
 	}
 
-	 // Insertar un elemento en una posicion especifica en un Array moviendo los
+	 private static int indiceCanciones(String cancion) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	// Insertar un elemento en una posicion especifica en un Array moviendo los
 	// datos (Lluvias)
 	public static void insertarEnPosicion(float[] arrayDondeInsertar, int numElementos, float elemAInsertar, int pos,
 			String[] arrayDondeInsertarStrings, String cadenaAInsertar) {
@@ -147,6 +163,11 @@ public class Utilidades {
             }
         }
     }
+
+	private static int indicePartido(String partido) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 
 
