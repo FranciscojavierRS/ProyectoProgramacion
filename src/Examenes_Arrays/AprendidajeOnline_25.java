@@ -1,4 +1,4 @@
-package AprendidajeOnline_25;
+package Examenes_Arrays;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ExamenPlanetas;
+package Examenes_Tipo_Control;
 
 import java.util.Scanner;
 
