@@ -1,6 +1,5 @@
 package EjerciciosChatGptArrays;
 
-import java.util.Scanner;
 
 public class Ej1 {
 

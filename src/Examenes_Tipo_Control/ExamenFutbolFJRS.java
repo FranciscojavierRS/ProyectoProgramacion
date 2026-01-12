@@ -13,7 +13,7 @@ public class ExamenFutbolFJRS {
         String posicion;
         int puntos, numJugadores, edad;
         double precioFicha;
-        int goles, penaltis;
+        int goles = 0, penaltis=0;
 
         // VARIABLES GLOBALES para los resultados (acumuladores/contadores)
         int sumaEdadDefensas = 0;         // suma de edades de los defensas (F)
