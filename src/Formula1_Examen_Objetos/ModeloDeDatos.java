@@ -79,7 +79,7 @@ public class ModeloDeDatos {
 		 * si ese piloto vuelve a quedar primero devolvemos true
 		 */
 		
-		for (int i=0; i<tCarreras.length; i++) {
+		for (int i=0; i<tCarreras.length-1; i++) {
 			Piloto piloto = tCarreras[i].getPilotoPosicion(1);
 			for (int j=i+1; j<tCarreras.length; j++) { // Recorremos el Array empezando por el elemento siguiente de i por eso se pone lo de i+1 
 				if (piloto.equals(tCarreras[j].getPilotoPosicion(1)) && tCarreras[i].getCircuito().equals(tCarreras[j].getCircuito())) {
