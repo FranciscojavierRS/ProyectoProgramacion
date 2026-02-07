@@ -1,4 +1,4 @@
-package Examen_Guerras;
+package Examen_Guerras_Objetos;
 
 
 public class Batalla

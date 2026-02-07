@@ -1,4 +1,4 @@
-package Examen_Guerras;
+package Examen_Guerras_Objetos;
 
 import java.util.Arrays;
 import java.util.Objects;

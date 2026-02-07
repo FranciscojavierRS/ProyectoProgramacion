@@ -3,7 +3,7 @@ package Ayudas_Arrays;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class Plantilla_TipoExamen_Arrays {
+public class PlantillaExamenGuardada {
 
     // Contadores de filas y columnas "activas" (datos introducidos)
     static int numFilas = 0;
@@ -14,7 +14,7 @@ public class Plantilla_TipoExamen_Arrays {
         int opcion = 0;
 
         // Definir tamaño máximo de la tabla según examen
-        float[][] datos = new float[20][20]; 
+        float[][] datos = new float[10][21]; 
         inicializarTabla(datos);
 
         // Arrays para nombres de filas y columnas
@@ -34,19 +34,19 @@ public class Plantilla_TipoExamen_Arrays {
             switch (opcion) {
                 case 1:
                     // Introducir un dato en la tabla
-                    System.out.println("Introduce nombre fila:");
+                    System.out.println("Introduce numero año:");
                     String fila = sc.next();
                     int indiceFila = getIndice(nombresFilas, fila, numFilas);
                     if (indiceFila == -1) break; // superó límite del array
                     if (indiceFila == numFilas) numFilas++;
 
-                    System.out.println("Introduce nombre columna:");
+                    System.out.println("Introduce el nombre de la sucursal:");
                     String columna = sc.next();
                     int indiceColumna = getIndice(nombresColumnas, columna, numColumnas);
                     if (indiceColumna == -1) break; // superó límite del array
                     if (indiceColumna == numColumnas) numColumnas++;
 
-                    System.out.println("Introduce valor:");
+                    System.out.println("Introduce los clientes:");
                     datos[indiceFila][indiceColumna] = sc.nextFloat();
                     break;
 
@@ -137,8 +137,14 @@ public class Plantilla_TipoExamen_Arrays {
 
     // Muestra la tabla con nombres de filas y columnas
     static void mostrar(float[][] tabla, int filas, int columnas, String[] nombresFilas, String[] nombresColumnas) {
-        for (int i = 0; i < filas; i++) {
-            System.out.println("Fila " + i + " (" + nombresFilas[i] + "):");
+      
+    	
+    	
+    	
+    	for (int i = 0; i < filas; i++) {
+    		//String[] añosOrdenados = Arrays.copyOf(nombresFilas, numFilas);
+            // Arrays.sort(añosOrdenados);
+            System.out.println(" " + i + " (" + nombresFilas[i] + "):");
             for (int j = 0; j < columnas; j++)
                 if (tabla[i][j] != -1) System.out.println("   -> " + nombresColumnas[j] + ": " + tabla[i][j]);
         }
