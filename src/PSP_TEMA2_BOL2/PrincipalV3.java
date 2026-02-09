@@ -1,4 +1,4 @@
-package Boletin2PSP;
+package PSP_TEMA2_BOL2;
 
 public class PrincipalV3 {
 
