@@ -3,7 +3,7 @@ package Examen_Musica_Colecciones;
 import java.util.Objects;
 
 //se comparan/ordenan en caso de ser necesario por nombre.
-public class Grupo {
+public class Grupo implements Comparable<Grupo>{
 	private String nombre;
 	private TipoMusica tipoMusica;
 
@@ -47,6 +47,12 @@ public class Grupo {
 	@Override
 	public String toString() {
 		return "\nGrupo [nombre=" + nombre + ", tipoMusica=" + tipoMusica + "]";
+	}
+
+	@Override
+	public int compareTo(Grupo o) {
+		// TODO Auto-generated method stub
+		return this.getNombre().compareTo(o.getNombre());
 	}
 
 }
