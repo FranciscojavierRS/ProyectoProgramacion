@@ -9,8 +9,6 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import Examen_EmpresaComercial_Colecciones.Comercial;
-import Examen_EmpresaComercial_Colecciones.Empresa;
 
 public class Modelo 
 {
@@ -115,9 +113,28 @@ public class Modelo
 		return "getListadoSolicitantes";
 	}
 
-	public String getListadoParejas()
-	{
-		return "getListadoParejas";
+	
+	public String getListadoParejas() {
+		
+		String gestorDeParejasDev = "";
+		
+		TreeMap<Persona, TreeMap<Persona, Persona>> gestorParejasOrdenadas = new TreeMap<>();
+		
+		
+		
+		for(Map.Entry<Persona, TreeMap<Persona, Persona>> gestorParejas : gestorParejasOrdenadas.entrySet()) {
+			if(gestorParejas.getValue()!=null && !gestorParejas.getValue().isEmpty()) {
+				gestorDeParejasDev += "\n Gestor....." + gestorParejas.getKey().getNombre() + "\n" + "Parejas hechas: \n";
+				
+				for(Map.Entry<Persona,Persona > pareja : gestorParejas.getValue().entrySet()) {
+					gestorDeParejasDev += "                  " + pareja.getKey().getNombre()+ " + " + pareja.getValue().getNombre() + "\n";
+				}
+				
+			}
+		}
+		
+		return gestorDeParejasDev;
 	}
+
 
 }
