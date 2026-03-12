@@ -16,6 +16,9 @@ public class Modelo{
 
 	public void addLinea(LineaAerea linea)
 	{
+		// 1. Añadir la línea aérea al TreeSet
+		// 2. TreeSet automáticamente ordena por Comparable de LineaAerea
+		// 3. TreeSet.add() devuelve true si se añadió, false si ya existía
 		this.lineas.add(linea);
 	}
 	
@@ -23,109 +26,119 @@ public class Modelo{
 	
 
 	public void addLocalidad(Localidad localidad){
-		// a�ade al mapa de conexiones una nueva pareja con la localidad
-		// pasada como par�metro y un nuevo conjunto de vuelos vac�o.
-		
+		// 1. Añade al mapa de conexiones una nueva pareja con la localidad
+		// 2. Crea un nuevo conjunto de vuelos vacío para esta localidad
+		// 3. TreeMap.put() sobrescribe si la clave ya existe
 		this.conexiones.put(localidad, new HashSet<>());
-		
-		
-		
+
 	}
 
 	public void addVueloALocalidad(Localidad localidad, Vuelo vuelo){
-		// a�ade el vuelo pasado como par�metro al conjunto de vuelos asociado a
-		// la localidad pasada como par�metro.
-		
-			this.conexiones.get(localidad).add(vuelo);
-			
-			
-			
+		// 1. Añade el vuelo al conjunto de vuelos asociado a la localidad
+		// 2. Obtiene el HashSet de vuelos de esa localidad y añade el vuelo
+		this.conexiones.get(localidad).add(vuelo);
 	}
 
 	public boolean hayErrores()	{
-		// devuelve un boolean indicando si hay errores en los datos, es decir,
-		// si hay alg�n vuelo con la misma localidad de origen que de destino.
+		// Devuelve true si hay errores: vuelo con misma localidad de origen que destino
 		
-		// Miramos cada localidad del MAPA. Por cada Localidad recorremos el CONJUNTO de vuelos y si
-		// ahí un vuelo que su localidad de destino es igual a la localidad devolvemos True
-		
+		// 1. Recorrer cada localidad del mapa (clave)
+		// 2. Por cada localidad, recorrer su conjunto de vuelos
+		// 3. Si algún vuelo tiene como destino la misma localidad origen → error
+
 		for (Localidad localidad: this.conexiones.keySet()) {
+			// 4. Recorrer todos los vuelos que parten de esta localidad
 			for (Vuelo vuelo : this.conexiones.get(localidad)) {
+				// 5. Verificar si el destino es igual al origen
 				if (vuelo.getDestino().equals(localidad)) {
+					// 6. Error encontrado: vuelo a sí mismo
 					return true;
 					
 				}
 			}
 		}
-		
-		
-		
+
+		// 7. No se encontraron errores
 		return false;
 	}
 
 	public int numVuelosALocsMillon(Localidad localidad){
-		// devuelve un entero con el n�mero de vuelos que parten de la localidad
-		// pasada como par�metro y llegan a localidades con m�s de 1.000.000 habs.
+		// Devuelve número de vuelos que parten de la localidad y llegan a ciudades >1M hab.
 		
+		// 1. Contador para vuelos a ciudades con más de 1 millón de habitantes
 		int vuelosMas1Millon = 0;
 		
+		// 2. Recorrer todos los vuelos que parten de la localidad especificada
 		for (Vuelo vuelo: this.conexiones.get(localidad)) {
+			// 3. Verificar si el destino tiene más de 1.000.000 habitantes
 			if (vuelo.getDestino().getHabitantes()>=1000000) {
+				// 4. Incrementar contador si cumple la condición
 				vuelosMas1Millon++;
 			}
 		}
-		
-		
+
+		// 5. Devolver el total de vuelos a ciudades grandes
 		return vuelosMas1Millon;
 	}
 
 	public TreeSet<LineaAerea> lineasHasta(Localidad localidad)	{
-		// devuelve un TreeSet con todas las l�neas a�reas que tienen vuelos hacia
-		// la localidad pasada como par�metro.
+		// Devuelve TreeSet con todas las líneas aéreas que tienen vuelos hacia la localidad
 		
+		// 1. Crear TreeSet para almacenar líneas (automáticamente ordenado y sin duplicados)
 		TreeSet <LineaAerea> lineas = new TreeSet<>();
 		
+		// 2. Recorrer todas las localidades de origen en el mapa
 		for (Localidad localidad2: this.conexiones.keySet()) {
+			// 3. Recorrer todos los vuelos de cada localidad de origen
 			for (Vuelo vuelo : this.conexiones.get(localidad2)) {
+				// 4. Verificar si el destino de este vuelo es la localidad buscada
 				if (vuelo.getDestino().equals(localidad)) {
+					// 5. Añadir la línea aérea de este vuelo al conjunto
 					lineas.add(vuelo.getLinea());
 				}
 			}
 		}
 		
+		// 6. Devolver el conjunto de líneas que vuelan a esa localidad
 		return lineas;
 	}
 
 	public int totalAvionesDesde(Localidad localidad){
-		// devuelve un entero con la suma de todos los aviones que tienen las l�neas
-		// que hacen vuelos desde la localidad pasada como par�metro.
+		// Devuelve suma de todos los aviones de las líneas que hacen vuelos desde la localidad
 		
-		
-		
+		// 1. Contador para el total de aviones
 		int contadorAvionesLineas = 0; 
+		// 2. TreeSet para evitar contar la misma línea varias veces
 		TreeSet <LineaAerea> lineas = new TreeSet<>();
 		
+		// 3. Recorrer todos los vuelos que parten de la localidad
 		for (Vuelo vuelo : this.conexiones.get(localidad)) {
+			// 4. Verificar si ya hemos contado esta línea (evitar duplicados)
 			if (!lineas.contains(vuelo.getLinea())) {
+				// 5. Añadir línea al conjunto de líneas ya contadas
 				lineas.add(vuelo.getLinea());
+				// 6. Sumar el número de aviones de esta línea al contador
 				contadorAvionesLineas+= vuelo.getLinea().getNumAviones();
 			}
 		}
-		
 
-		
-		
+		// 7. Devolver el total de aviones de todas las líneas únicas
 		return contadorAvionesLineas;
 	}
 
 	public boolean hayVuelosReciprocos(){
-		// devuelve un boolean indicando si existen dos ciudades entre las que hay 
-		// vuelos en los dos sentidos.
+		// Devuelve true si existen dos ciudades con vuelos en ambos sentidos
 		
+		// 1. Recorrer cada localidad de origen
 		for (Localidad localidad: this.conexiones.keySet()) {
+			// 2. Recorrer todos los vuelos de esta localidad
 			for (Vuelo vuelo : this.conexiones.get(localidad)) {
+				// 3. Para cada vuelo, verificar si existe vuelo de regreso
+				// 4. Acceder a los vuelos del destino y buscar si hay vuelo a la localidad original
 				for (Vuelo vuelo2 : this.conexiones.get(vuelo.getDestino())) {
+					// 5. Verificar si el destino del vuelo de regreso es la localidad original
 					if (localidad.equals(vuelo2.getDestino())) {
+						// 6. Se encontraron vuelos recíprocos
 						return true;
 					}
 				}
@@ -133,19 +146,28 @@ public class Modelo{
 			}
 		}
 		
+		// 7. No se encontraron vuelos recíprocos
 		return false;
 	}
 
 	@Override
 	public String toString(){
+		// Genera representación textual de todas las conexiones de vuelos
+		
+		// 1. String para construir el resultado
 		String res="";
+		// 2. Recorrer cada localidad de origen
 		for(Localidad l:this.conexiones.keySet())
 		{
+			// 3. Añadir encabezado para esta localidad de origen
 			res+="\nDesde: "+l.getNombre()+" hasta:\n";
+			// 4. Recorrer todos los vuelos de esta localidad
 			for(Vuelo v:this.conexiones.get(l))
+				// 5. Añadir información del destino y línea aérea
 				res+=v.getDestino().getNombre()+" con "+v.getLinea()+", ";
 		}
 
+		// 6. Devolver la representación completa
 		return res;
 	}
 

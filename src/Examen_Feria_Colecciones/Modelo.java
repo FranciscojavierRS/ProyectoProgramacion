@@ -97,18 +97,26 @@ public class Modelo {
 	}
 
 	public LinkedList<Consumicion> getListaConsumiciones(Socio socio) {
+		// 1. Obtener y devolver la lista de consumiciones del socio especificado
+		// 2. Si el socio no existe, devolver null (HashMap.get() behavior)
 		return listaCuentas.get(socio);
 	}
 
 	public String calculaTotalCuenta(Socio socio) {
 		
+		// 1. Obtener la lista de consumiciones del socio
 		LinkedList<Consumicion> consumiciones =  listaCuentas.get(socio);
 		
+		// 2. Acumulador para el total de la cuenta
 		Float sumaPrecios = 0F;
 		
+		// 3. Recorrer todas las consumiciones del socio
 		for( Consumicion consumicion : consumiciones) {
+			// 4. Para cada consumición, calcular subtotal: precio_unitario * cantidad
+			// 5. Obtener precio unitario del mapa de precios y multiplicar por cantidad
 			sumaPrecios+= listaPrecios.get(consumicion.getArticulo()) * consumicion.getCantidad();
 		}
+		// 6. Devolver el total como String
 		return sumaPrecios.toString();
 	}
 
