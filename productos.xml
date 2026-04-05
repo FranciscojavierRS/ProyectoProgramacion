@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<productos>
+	<producto>
+		<id>1004</id>
+		<nombre>Auriculares Sony WH-1000XM4</nombre>
+		<precio>349.99</precio>
+		<cantidad>20</cantidad>
+	</producto>
+	<producto>
+		<id>1005</id>
+		<nombre>Smartwatch Apple Series 6</nombre>
+		<precio>429.0</precio>
+		<cantidad>8</cantidad>
+	</producto>
+	<producto>
+		<id>1006</id>
+		<nombre>Monitor LG UltraWide 34''</nombre>
+		<precio>499.0</precio>
+		<cantidad>12</cantidad>
+	</producto>
+	<producto>
+		<id>1007</id>
+		<nombre>Tablet Amazon Fire HD 10</nombre>
+		<precio>149.99</precio>
+		<cantidad>25</cantidad>
+	</producto>
+	<producto>
+		<id>1008</id>
+		<nombre>Consola PlayStation 5</nombre>
+		<precio>499.99</precio>
+		<cantidad>3</cantidad>
+	</producto>
+	<producto>
+		<id>1009</id>
+		<nombre>Teclado mecánico Logitech G915</nombre>
+		<precio>199.99</precio>
+		<cantidad>18</cantidad>
+	</producto>
+	<producto>
+		<id>1010</id>
+		<nombre>Cámara de acción GoPro Hero9</nombre>
+		<precio>399.99</precio>
+		<cantidad>6</cantidad>
+	</producto>
+	<producto>
+		<id>1001</id>
+		<nombre>Cámara Canon EOS</nombre>
+		<precio>799.99</precio>
+		<cantidad>10</cantidad>
+	</producto>
+	<producto>
+		<id>1002</id>
+		<nombre>Smartphone Samsung Galaxy S21</nombre>
+		<precio>999.99</precio>
+		<cantidad>15</cantidad>
+	</producto>
+	<producto>
+		<id>1003</id>
+		<nombre>Laptop Dell XPS 13</nombre>
+		<precio>1199.0</precio>
+		<cantidad>5</cantidad>
+	</producto>
+</productos>

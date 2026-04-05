@@ -1,10 +1,9 @@
-15
-13
-32
-22
-41
-6
-49
-4
-2
-14
+Numeros introducidos:
+Posicion 0: 1
+Posicion 1: 2
+Posicion 2: 3
+Posicion 3: 4
+Posicion 4: 5
+El máximo es el número: 5 En la posición 4
+El minimo es el número: 1 En la posición 1
+Media: 3.0

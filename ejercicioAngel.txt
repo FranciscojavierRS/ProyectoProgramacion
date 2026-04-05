@@ -1,0 +1,10 @@
+toyota,4,15000
+Mercedes,5,32000
+Renault,2,10000
+Seat,6,20000
+Mercedes,5,32000
+toyota,4,15000
+Seat,6,20000
+Mercedes,5,32000
+Mercedes,5,32000
+Mercedes,5,32000

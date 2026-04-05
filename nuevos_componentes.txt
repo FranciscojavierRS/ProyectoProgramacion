@@ -1,0 +1,7 @@
+1;5090;TarjetaGrafica;100;2500
+2;5070ti;TarjetaGrafica;10;1200
+2;5070ti;TarjetaGrafica;10;1200
+3;DDR516GB;Ram;1;2000
+3;DDR516GB;Ram;1;2000
+4;DDR416GB;Ram;29;500
+

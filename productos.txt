@@ -1,0 +1,4 @@
+1008,Consola PlayStation 5,499.99,3
+1009,Teclado mecánico Logitech G915,199.99,18
+1007,Tablet Amazon Fire HD 10,149.99,25
+1010,Cámara de acción GoPro Hero9,399.99,6

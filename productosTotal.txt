@@ -1,0 +1,7 @@
+1004,Auriculares Sony WH-1000XM4,349.99,20
+1005,Smartwatch Apple Series 6,429.0,8
+1006,Monitor LG UltraWide 34'',499.0,12
+1007,Tablet Amazon Fire HD 10,149.99,25
+1008,Consola PlayStation 5,499.99,3
+1009,Teclado mec�nico Logitech G915,199.99,18
+1010,C�mara de acci�n GoPro Hero9,399.99,6

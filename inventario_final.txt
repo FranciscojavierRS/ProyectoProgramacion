@@ -1,0 +1,5 @@
+El Quijote 15.5
+Fundacion 25.0
+Java Total 40.0
+el valor total del inventario es 80.5
+El libro con mas unidades es:El Quijote

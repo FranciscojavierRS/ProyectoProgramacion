@@ -1,0 +1,7 @@
+lista de coches ordenadas
+Mercedes,5,32000.0
+Renault,2,10000.0
+Seat,6,20000.0
+toyota,4,15000.0
+este es el coche que se vendio mas veces Mercedes
+La media de los precios de los coches es 19250.0€
