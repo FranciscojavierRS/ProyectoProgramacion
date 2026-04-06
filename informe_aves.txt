@@ -1,0 +1,8 @@
+Veces que se repite cada lugar 
+Sevilla : 1
+Dos Hermanas : 4
+Montequinto : 1
+Peru : 1
+La especie con el mayor avistamiento es:Especie2
+El peso promedio registrado es de : 4.0
+El peso promedio de todas las aves es:5.428571428571429

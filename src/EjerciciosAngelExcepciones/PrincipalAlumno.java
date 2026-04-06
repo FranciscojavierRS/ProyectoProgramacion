@@ -9,6 +9,21 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+/*
+ * Crea una clase Alumno con:
+Atributos: dni (String), nombre (String) y notaMedia (double).
+Un alumno es igual a otro si tiene el mismo dni
+Orden natural: Por notaMedia de mayor a menor.
+
+En una clase Principal, crea un HashSet<Alumno> y añade 5 alumnos (asegúrate de repetir un DNI para comprobar que el Set no lo admite).
+Escribe todos los alumnos del HashSet en un fichero binario llamado estudiantes.dat
+
+Imprime por pantalla y escribe en un fichero de texto:
+1 Dame la lista de alumnos ordenada.
+Al final del fichero, indica quién es el alumno con la nota más alta.
+Indica cuántos alumnos tienen una nota superior a 5.
+ */
+
 public class PrincipalAlumno {
 
 	public static void main(String[] args) {

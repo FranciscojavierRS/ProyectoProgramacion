@@ -1,0 +1,7 @@
+Especie1,Dos Hermanas,500,4
+Especie2,Montequinto,5000,7
+Especie3,Sevilla,400,10
+Especie4,Peru,10,5
+Especie2,Dos Hermanas,500,4
+Especie3,Dos Hermanas,500,4
+Especie4,Dos Hermanas,500,4
