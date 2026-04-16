@@ -1,10 +1,6 @@
-package Examen_Febrero_Objetos;
+package Examen_Febrero_Atleta_Objetos;
 
 import java.util.Arrays;
-import java.util.Comparator;
-
-import Examen_Biblioteca_Objetos.MaterialBibliografico;
-import Hotel_Examen_Objetos.Reserva;
 
 public class GestionJJOO {
 	public static void main(String[] args) {
@@ -86,66 +82,77 @@ public class GestionJJOO {
 	}
 
 	// Apartado c)
+
+	/*
+	 * c) (2 Puntos) public static boolean hayErrores(Pais[] paisesJJOO) en
+	 * GestionJJOO. Este método devuelve true si algún atleta de alguno de los
+	 * paises del array recibido por parámetro contiene rivales de su mismo pais, y
+	 * false en caso contrario (ya que un atleta no compite contra otro de su mismo
+	 * país).
+	 * 
+	 */
 	public static boolean hayErrores(Pais[] paisesJJOO) {
 
-		for (int i = 0; i < paisesJJOO.length; i++) {
-			Pais paisActual = paisesJJOO[i];
-			Atleta atletaActual = paisActual.getAtletas().getTabla()[i];
+		for (Pais pais : paisesJJOO) {
 
-			/*
-			 * 
-			 * for (int j = 0; j < atletaActual.getRivales().getNumAtletas(); j++) { Atleta
-			 * rivalAtleta = atletaActual.getRivales().getTabla()[j]; }
-			 * 
-			 * 
-			 */
+			for (int i = 0; i < pais.getAtletas().getNumAtletas() - 1; i++) {
+
+				for (int j = 1; j < pais.getAtletas().getNumAtletas(); j++) {
+
+					if (pais.getAtletas().getTabla()[i].getRivales().contieneAtleta(pais.getAtletas().getTabla()[j])
+							|| pais.getAtletas().getTabla()[j].getRivales()
+									.contieneAtleta(pais.getAtletas().getTabla()[i])) {
+
+						return true;
+
+					}
+				}
+			}
 
 		}
+
 		return false;
 	}
 
-	/*
-	 * for (int i = 0; i < tReservas.length - 1; i++) { Reserva reserva =
-	 * tReservas[i]; for (int j = i + 1; j < tReservas.length; j++) { if
-	 * (reserva.getHabitacion().equals(tReservas[j].getHabitacion()) &&
-	 * tReservas[j].getFechaInicio().compareTo(reserva.getFechaFin()) < 0 &&
-	 * tReservas[j].getFechaFin().compareTo(reserva.getFechaInicio()) > 0) { return
-	 * true; } } } return false; }
-	 * 
-	 */
-
 	// Apartado d)
+	
+	/*
+	 * d) (1 Punto) public static Atleta[] getAtletasOrdenados(Pais pais) en
+GestionJJOO.
+Este método devuelve el array de atletas del país recibido por parámetro del tamaño justo y
+ordenado por la ordenación natural de los atletas.
+
+	 */
 	public static Atleta[] getAtletasOrdenados(Pais pais) {
 
-		/*
-		 * { Reserva[] reservasHabitacion = new Reserva[0];
-		 * 
-		 * for (Reserva reserva : tReservas) { if
-		 * (reserva.getHabitacion().equals(habitacion)) { reservasHabitacion =
-		 * Arrays.copyOf(reservasHabitacion, reservasHabitacion.length + 1);
-		 * reservasHabitacion[reservasHabitacion.length - 1] = reserva; } }
-		 * 
-		 * return reservasHabitacion; } pais.atletas
-		 */
+		Atleta[] atletas = Arrays.copyOf(pais.getAtletas().getTabla(), pais.getAtletas().getNumAtletas());
 
-		Atleta[] atletaOrdenado = new Atleta[0];
+		Arrays.sort(atletas);
 
-		for (int i = 0; i < pais.getAtletas().getNumAtletas(); i++) {
-			if (pais.getAtletas().equals(pais.getAtletas())) {
-				atletaOrdenado = Arrays.copyOf(atletaOrdenado, atletaOrdenado.length + 1);
-				atletaOrdenado[atletaOrdenado.length - 1] = atletaOrdenado[i];
-				Arrays.sort(atletaOrdenado);
-			}
-		}
-
-		return atletaOrdenado;
+		return atletas;
 	}
-
-// Arrays.sort(materialesOrdenados, new Comparator<MaterialBibliografico>()
 
 	// Apartado e)
 	public static Pais paisMenosMedallas(Pais[] paisesJJOO) {
-		return null;
+
+		Pais paisConMenosMedallas = paisesJJOO[0];
+		int numeroMedallasmin = 999999999;
+
+		for (Pais pais : paisesJJOO) {
+			int numeroMedallas = 0;
+
+			for (int i = 0; i < pais.getAtletas().getNumAtletas(); i++) {
+
+				numeroMedallas += pais.getAtletas().getAtleta(i).getMedallasOro();
+			}
+
+			if (numeroMedallas < numeroMedallasmin) {
+				numeroMedallasmin = numeroMedallas;
+				paisConMenosMedallas = pais;
+			}
+		}
+
+		return paisConMenosMedallas;
 	}
 
 }

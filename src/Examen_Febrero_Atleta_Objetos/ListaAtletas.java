@@ -1,42 +1,41 @@
-package Examen_Febrero_Objetos;
+package Examen_Febrero_Atleta_Objetos;
 
 import java.util.Arrays;
 
 public class ListaAtletas {
-	private Atleta[] tabla = new Atleta[10];
-	private int numAtletas = 0;
+	private Atleta[] tabla = new Atleta[10]; // array inicial
+	private int numAtletas = 0; // número real de atletas
 
 	public ListaAtletas() {
-
 	}
 
 	public Atleta[] getTabla() {
 		return tabla;
 	}
 
+	// Añade atleta al array (redimensiona si hace falta)
 	public void anyadeAtleta(Atleta a) {
 		if (numAtletas >= tabla.length) {
 			tabla = Arrays.copyOf(tabla, numAtletas + 10);
 		}
 		tabla[numAtletas++] = a;
-
 	}
 
 	// Apartado a)
-	public boolean contieneAtleta(Atleta atleta) {
+	/*
+	 * Comprueba si un atleta está en la lista
+	 */
+	public boolean contieneAtleta(Atleta a) {
 
-		boolean esta = false;
-
-		for (int i = 0; i < numAtletas && !esta; i++) {
-			// if (atleta.getNombre() !=atleta.getNombre([i]){
-			esta = true;
+		// Recorre los elementos válidos
+		for (int i = 0; i < numAtletas; i++) {
+			if (tabla[i].equals(a)) {
+				return true;
+			}
 		}
-		return esta;
 
+		return false;
 	}
-
-	// return esta;
-	// }
 
 	public int getNumAtletas() {
 		return numAtletas;
